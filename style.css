@@ -1,0 +1,102 @@
+/* Import Google font */
+/* 
+   Kode ini mengatur tampilan dan gaya visual dari permainan Snake Game.
+*/
+
+/* Mengimpor font Open Sans dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+/* Reset margin, padding, dan box-sizing untuk semua elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Pengaturan body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #E3F2FD; /* Warna latar belakang body */
+}
+
+/* Pengaturan wrapper, yang merupakan container utama permainan */
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #293447; /* Warna latar belakang wrapper */
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2); /* Bayangan pada wrapper */
+}
+
+/* Pengaturan detail permainan seperti skor dan skor tertinggi */
+.game-details {
+  color: #B8C6DC; /* Warna teks detail permainan */
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Pengaturan papan permainan */
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #212837; /* Warna latar belakang papan permainan */
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+/* Pengaturan tampilan makanan pada papan permainan */
+.play-board .food {
+  background: #FF003D; /* Warna makanan */
+}
+
+/* Pengaturan tampilan kepala ular pada papan permainan */
+.play-board .head {
+  background: #60CBFF; /* Warna kepala ular */
+}
+
+/* Pengaturan kontrol permainan */
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+
+/* Pengaturan tombol kontrol */
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC; /* Warna ikon tombol kontrol */
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26; /* Garis pemisah antar tombol kontrol */
+}
+
+/* Media query untuk tampilan responsif pada layar berukuran kecil (maksimum 800px) */
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
